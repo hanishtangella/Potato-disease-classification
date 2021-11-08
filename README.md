@@ -13,10 +13,9 @@ In this project, there are three classes, namely
 After importing the required libraries, read the data using tf.keras.preprocessing.image_dataset_from_directory with target shape of (256,256) and batch size of 32.
 Splitted the complete data into three sets namely, training set(80%), validation set(10%), test set(10%).
 Used most useful classes like Cache, shuffle, prefetch inorder to make the model robust.
-**Building the CNN model**
+**Building the CNN model**:
 1._Creating a Layer for Resizing and Normalization_:
 Before I feed my images to network, I should do resizing it to the desired size. Moreover, to improve model performance, I should normalize the image pixel value (keeping them in range 0 and 1 by dividing by 256). This should happen while training as well as inference. Hence I can add that as a layer in our Sequential Model.
-
 You might be thinking why I need to resize (256,256) image to again (256,256). You are right I don't need to but this will be useful when I am done with the training and start using the model for predictions. At that time somone can supply an image that is not (256,256) and this layer will resize it
 2. _Data Augmentation_:
 In order to avoid overfitting, I used Data Augmentation.
